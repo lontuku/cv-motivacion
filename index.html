@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>CV - Proyectos</title>
+</head>
+<body>
+  
+  <div class="wrapper">
+    <h1>Carta de Motivación y Proyectos</h1>
+    <span class="break" id="intro">Estimadas/os</span>
+    <p>     
+    Les escribo porque vi su oferta en <a class="link" href="https://www.getonbrd.com/empleos/programacion/rubyista-backend-para-un-equipo-agil-bootic-remote" target="_blank">Get On Board</a> y me llamaron inmediatamente la atención:
+    
+    <ul class="list-p">
+      <li> La envergadura del sistema que están desarrollando y los desafíos que deben estar asociados a un proyecto tan
+      ambicioso.
+      </li>
+      <li>El uso de múltiples lenguajes además de ruby como golang y lua.</li>
+      <li> El que estén trabajando en sus propias librerías y frameworks.</li>
+    </ul>
+    </p>
+
+    <p>Sobre mi, les puedo decir que no tengo experiencia en la industria, pero espero mostrarles a través de proyectos que he realizado, la motivación y el interés que poseo por esta área. Terminé el curso de full-stack de 
+      <a href="https://desafiolatam.com/fullstack/" target="_blank" class="link">Desafío Latam</a> y
+      actualmente estoy realizando un segundo curso, esta vez en modalidad online el de 
+      <a href="https://open.appacademy.io/" target="_blank" class="link">App Academy</a>, 
+      para poder aumentar mis conocimientos en el uso de Test, Ruby, Rails, JS y bases de datos.
+    </p>
+    
+    <div class="navbar" id="navbar">
+      <span class="break">Contenido</span>
+      <ul>
+        <li><a href="#intro" class="link">Intro</a></li>
+        <li><a href="#ig" class="link">Scraping Instagram</a></li>
+        <li><a href="#sub" class="link">Scraping Subtítulos</a></li>
+        <li><a href="#turtle" class="link">Turtle</a></li>
+        <li><a href="#contacto" class="link">Contacto</a></li>
+      </ul>
+    </div>
+    <h2>Ruby On Rails</h2>
+    <div class="wrapper-title">
+    <span class="break-t" id="ig">Instagram Scraper</span> <a href="https://github.com/lontuku/railscatalogue" class="btn link" target="_blank">Github</a>
+    </div>
+    <span class="break">**Debido a que a Instagram no le parece ser scrapeado, no está disponible el scraper, solo el código del catálogo Rails, pero si les interesa revisarlo no tengo problemas en compartirlo.</span>
+    <p>
+    Como el proyecto final para Desafío Latam, decidí hacer un catálogo de tiendas en Instagram de emprendedores chilenos.
+    Para automatizar este proceso desarrollé un scraper de Instagram.</p>
+    
+    <span class="break">Características:</span> 
+    <ul class="list-p"> 
+      <li>Descargar una cantidad ilimitada de fotos de cada perfil.</li>
+      <li> Obtener la cantidad de likes de cada imágen o video.
+      <li>Obtener la cantidad de seguidores y seguidos de cada perfil.</li>
+      <li>Realizar un backup usando archivos .yml de la información recopilada.</li>
+      <li>Revisar perfiles ya scrapeados y determinar si ha subido nuevas imágenes o videos y realizar un update en la base de
+      datos del catálogo rails, usando una API.</li>
+    </ul>
+    
+    <span class="break">Tecnologías:</span>
+    <ul class="list-p">
+      <li>Selenium (Para automatizar el navegador)</li>
+      <li>Nokogiri (Facilitar el trabajo con los datos)</li>
+      <li>Regex (Para filtrar la información obtenida)</li>
+      <li>Xpath (Capturar la información relevante)</li>
+      <li>Ruby (Para organizar todo el proceso)</li>
+      <li>Rails (Para generar un catálogo online)</li>
+    </ul>
+
+    <span class="break">Desafíos:</span>
+    <p>Hubieron múltiples desafíos en este proyecto, la causa principal de dolores de cabeza es la forma en que IG
+      estructura su sitio para complicar la extracción de información:</p>
+    <ul class="list-p">
+      <li>La exigencia de usar una cuenta válida. Tuve que crear una cuenta y cargar las cookies de la misma en cada
+        solicitud para poder acceder a la información.</li>
+      <li>Como el uso de clases de css dinámicas (actualización reciente). Para lo que Xpath y regex fueron de increíble
+        utilidad.</li>
+      <li>El que para optimizar la carga de imágenes está constantemente eliminando imágenes y cargando nuevas de forma
+        dinámica.</li>
+    </ul>
+    <p>Una vez recopilada y filtrada la información, la información fue tomada por una aplicación Rails que generaba un
+      catálogo básico que ordena la información en las categorías correspondientes.
+    </p>
+    <span class="break">Imágenes</span>
+    <div class="pic-container">
+      <a href="images/catalogo/cap1.png"><img src="images/catalogo/cap1.png" class="img-shadow gal" alt="">
+      </a>
+    </div>
+    <div class="pic-container">
+      <a href="images/catalogo/cap2.png"><img src="images/catalogo/cap2.png" class="img-shadow gal" alt="">
+      </a>
+      
+    </div>
+    <div class="pic-container">
+      <a href="images/catalogo/categorias.png"><img src="images/catalogo/categorias.png" class="img-shadow gal" alt="">
+      </a>
+    </div>
+    <div class="pic-container">
+      <a href="images/catalogo/landing.png"><img src="images/catalogo/landing.png" class="img-shadow gal" alt="">
+      </a>
+    </div>
+
+  <div class="divisor full-bleed"></div>
+
+  <div class="wrapper-title">
+    <span class="break-t" id="sub">Scraper de Subtítulos</span>
+    <div class="wrapper-two-btn">
+     <a href="https://whispering-plains-51052.herokuapp.com/" class="btn link"
+      target="_blank">Demo Heroku</a>
+      <a href="https://github.com/lontuku/subtitle-scraper" class="btn link sub-github" target="_blank">Github</a>
+      </div>
+    </div>
+  <p>
+    Una pequeña y práctica aplicación en ROR que permite scrapear la información de <a class="link" href="https://www.subdivx.com/" target="_blank">Subdivx</a> (La base de
+    datos de subtítulos en Español de mejor calidad).
+  </p>
+
+  <span class="break">Características:</span>
+  <ul class="list-p">
+    <li>Permite encontrar todos los subtítulos disponibles para cierto título ya sea serie o película.</li>
+    <li>Ordena los resultados obtenidos según que tan cercanos con en términos de palabras claves al título original.</li>
+    <li>Usa un drag&amp;drop (con vanilla js), para capturar el nombre y realizar un ajax al controlador correspondiente
+      en RAILS para luego generar una tabla ordenada por prioridad.</li>
+  </ul>
+  <span class="break">Tecnologías:</span>
+  <ul class="list-p">
+    <li>Rails (Generar una interfaz para la app)</li>
+    <li>Regex (Para poder filtrar la información tanto del título como los tags)</li>
+    <li>Nokogiri (Para facilitar el parse del sitio a scrapear)</li>
+  </ul>
+  <span class="break">Desafíos:</span>
+  <ul class="list-p">
+    <li>Mas que nada mi desconocimiento de Regex, para este proyecto aprendí Regex con distintos recursos online, este
+      mismo conocimiento me facilitó bastante la realización del scraper de Instagram.</li>
+    <li>También fue primera vez que intenté hacer algo práctico con web-scraping por lo que también requirió adquirir
+      conocimientos como el uso de Nokogiri y el uso de PRY para poder trabajar de forma mas cómoda.</li>
+  </ul>
+  <p>Por otro lado sigue siendo mi proyecto mas práctico tanto como yo, como amigos/as lo usamos constantemente para
+    descargar los subtítulos de series y películas.</p>
+  <span class="break">Imágen:</span>
+  <div class="pic-container">
+    <a href="images/sub/sub.png"><img src="images/sub/sub.png" class="img-shadow gal" alt="">
+    </a>
+  </div>
+<div class="divisor full-bleed"></div>
+
+    <h2 id="javascript">Javascript</h2>
+    <div class="wrapper-title">
+      <span class="break-t" id="turtle">JS Turtle</span>
+      <div class="wrapper-two-btn">
+        <a href="https://lontuku.github.io/turtle/" class="btn link" target="_blank">Demo</a>
+        <a href="https://github.com/lontuku/turtle" class="btn link sub-github" target="_blank">Github</a>
+      </div>
+    </div>
+    <p>
+      Me llama mucho la atención el desarrollo de visualizaciones usando código, por lo mismo, cuando empecé a aprender js y
+      las facilidades que tiene para usar el navegador como interfaz, trabajé en un generador de formas simples usando un
+      turtle.</p>
+    <span class="break">Características:</span>
+    <ul class="list-p">
+      <li>Los colores se distribuyen según si la iteración es o no un número primo.</li>
+      <li>Permite generar una enorme cantidad de figuras atractivas visualmente.</li>
+      <li>Permite compartir los diseños de múltiples formas:
+        <ul class="list-p">
+          <li>Descargándolos como jpg.</li>
+          <li>Copiando los parámetros de generación en el portapaleles usando params.</li>
+        </ul>
+      </li>
+      <li>Permite la generación aleatoria tanto de formas, como de las distintas capas de colores que las conforman.</li>
+    </ul>
+    <span class="break">Tecnologías:</span>
+    <ul class="list-p">
+      <li>Vanilla Javascript.</li>
+      <li>Un micro framework que dispone de una clase para utilizar un turtle en canvas.</li>
+    </ul>
+    <span class="break">Desafíos:</span>
+    <ul class="list-p">
+      <li>Generar formas visualmente atractivas, tomó algo de experimentación, usé Scratch para poder iterar mas rápido.
+      </li>
+      <li>El agregar algunas de las funciones como el poder compartir los diseños o el poder copiar los parámetros en el
+        portapeles de forma simple.</li>
+      <li>El poder generar una interfaz práctica que personas externas pudieran usar sin complicaciones.</li>
+    </ul>
+    <span class="break">Imágenes:</span>
+    <div class="pic-container">
+      <a href="images/geom/geom-1.jpg"><img src="images/geom/geom-1.jpg" class="img-shadow gal geom" alt="">
+      </a>
+    </div>
+    <div class="pic-container">
+      <a href="images/geom/geom-2.jpg"><img src="images/geom/geom-2.jpg" class="img-shadow gal geom" alt="">
+      </a>
+    </div>
+    <div class="pic-container">
+      <a href="images/geom/geom-3.jpg"><img src="images/geom/geom-3.jpg" class="img-shadow gal geom" alt="">
+      </a>
+    </div>
+    <div class="pic-container">
+      <a href="images/geom/geom-4.jpg"><img src="images/geom/geom-4.jpg" class="img-shadow gal geom" alt="">
+      </a>
+    </div>
+    <div class="pic-container">
+      <a href="images/geom/geom-5.png"><img src="images/geom/geom-5.png" class="img-shadow gal geom" alt="">
+      </a>
+    </div>
+
+    
+    <div class="wrapper-card full-bleed" id="contacto">
+      <div class="blog-card">
+        <div class="inner-part">
+          <label for="imgTap" class="img img-shadow">
+              <img src="/images/pp.jpeg">
+          </label>
+          <div class="content content-1">
+            <div class="title">
+              Tomás König Torres</div>
+            <div class="text">
+              DESARROLLADOR <span>FULL-STACK</span>  <br>
+            </div>
+            <div class="list">
+              <ul>
+                <li>RUBY ON RAILS</li>
+                <li>WEB-SCRAPING</li>
+                <li>JAVASCRIPT</li>
+                <li>CSS</li>
+              </ul>
+            </div>
+          
+            <a href="https://www.linkedin.com/in/tom%C3%A1s-k%C3%B6nig-torres-569a28128/" class="btn link" target="_blank">Linkedin</a>
+            <a href="mailto:tomas.konig.t@gmail.com" class="btn contact link" target="_blank">Correo</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+  <script>
+    window.onscroll = function () { navFunction() };
+
+    var navbar = document.getElementById("navbar");
+    var sticky = navbar.offsetTop;
+
+    function navFunction() {
+      if (window.pageYOffset >= sticky) {
+        navbar.classList.add("sticky")
+      } else {
+        navbar.classList.remove("sticky");
+      }
+    }
+  </script>
+</body>
+</html>
