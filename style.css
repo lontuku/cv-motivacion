@@ -79,6 +79,10 @@ p{
   margin-bottom: 20px;
 }
 
+.mov{
+  display: none;
+}
+
 /* .navbar li{
   margin: 0 0 2px 0;
 } */

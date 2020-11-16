@@ -30,7 +30,7 @@
       para poder aumentar mis conocimientos en el uso de Test, Ruby, Rails, JS y bases de datos.
     </p>
     
-    <div class="navbar" id="navbar">
+    <div class="navbar" id="navbar-fix" >
       <span class="break">Contenido</span>
       <ul>
         <li><a href="#intro" class="link">Intro</a></li>
@@ -40,6 +40,18 @@
         <li><a href="#contacto" class="link">Contacto</a></li>
       </ul>
     </div>
+
+    <div class="navbar mov" id="navbar">
+      <span class="break">Contenido</span>
+      <ul>
+        <li><a href="#intro" class="link">Intro</a></li>
+        <li><a href="#ig" class="link">Scraping Instagram</a></li>
+        <li><a href="#sub" class="link">Scraping Subtítulos</a></li>
+        <li><a href="#turtle" class="link">Turtle</a></li>
+        <li><a href="#contacto" class="link">Contacto</a></li>
+      </ul>
+    </div>
+    
     <h2>Ruby On Rails</h2>
     <div class="wrapper-title">
     <span class="break-t" id="ig">Instagram Scraper</span>
@@ -242,12 +254,17 @@
     window.onscroll = function () { navFunction() };
 
     var navbar = document.getElementById("navbar");
-    var sticky = navbar.offsetTop;
+    var fixed = document.getElementById("navbar-fix");
+
+    var sticky = fixed.offsetTop;
 
     function navFunction() {
       if (window.pageYOffset >= sticky) {
         navbar.classList.add("sticky")
-      } else {
+        navbar.style.display = "block";
+      }
+      else {
+        navbar.style.display = "none";
         navbar.classList.remove("sticky");
       }
     }
