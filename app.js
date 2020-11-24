@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   var userName = ''
+  var linkedIn = ''
 
   if (localStorage.getItem('userCv') == null){
     userName = getRandomString(20)
@@ -21,18 +22,29 @@ document.addEventListener('DOMContentLoaded', function () {
   }
   
   //console.log(userName)
+  function sendForm() {
+    const datum = new FormData();
+    datum.append('entry.731978348', userName);
+    datum.append('entry.1118760234', linkedIn);
+    fetch('https://docs.google.com/forms/u/0/d/e/1FAIpQLScTgB5u13efXrROfVWUcYyHXTksacCjRnMwtvmU9KKINP3jww/formResponse', {
+      headers: {
+        'Content-type': 'application/json'
+      },
+      method: 'POST',
+      mode: 'no-cors',
+      body: datum,
+    });
 
-  const datum = new FormData();
-  datum.append('entry.731978348', userName);
-  fetch('https://docs.google.com/forms/u/0/d/e/1FAIpQLScTgB5u13efXrROfVWUcYyHXTksacCjRnMwtvmU9KKINP3jww/formResponse', {
-    headers: {
-      'Content-type': 'application/json'
-    },
-    method: 'POST',
-    mode: 'no-cors',
-    body: datum,
-  });
+    
+  }
 
+  sendForm()
+  
+  var linkOpen = document.getElementById('linked')
+  linkOpen.addEventListener('click', function(){
+    linkedIn = 'Abierto'
+    sendForm()
+  })
   
 
 });
